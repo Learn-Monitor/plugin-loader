@@ -3,7 +3,7 @@
   "component": {
     "group": "de.igs-landstuhl",
     "module": "plugin-loader",
-    "version": "v1.0.0",
+    "version": "v1.0.1",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -25,13 +25,13 @@
       },
       "files": [
         {
-          "name": "plugin-loader-v1.0.0.jar",
-          "url": "plugin-loader-v1.0.0.jar",
-          "size": 24036,
-          "sha512": "69953a4332bbf99b1a740ea5ec243fedb27898bb60757c5db4f1a1fe5c476ce46f64b58d21485279bb762a021a790d17c3ea6bca8f22c65094b42e5444a49690",
-          "sha256": "4bd72518220b2b907f2cede6ab457a0e07261d0850571feb24d0e4fac6d3c9b0",
-          "sha1": "2632fb3a4af38f389e4430d1c3b1f85eef9a1da9",
-          "md5": "8c62f9e178f49ac8ffe20a1a0b402497"
+          "name": "plugin-loader-v1.0.1.jar",
+          "url": "plugin-loader-v1.0.1.jar",
+          "size": 25308,
+          "sha512": "3a7fb1412364f96d2e1569eb4b016fa420c2ca89f73096a5e44b09a7e1e1bb70ef61de279be4d017313d0698bb6cf844e922c36a862ac3a6ee0ade3ca9e81545",
+          "sha256": "d553339aeea6ebc7431fc0f92cfb17ea09fa339c1c50d93a2cf711594b8438b0",
+          "sha1": "4dddb91b99f55aed9df0370de1f99646d48f08f9",
+          "md5": "61d502345993847b6d6e06bae065b657"
         }
       ]
     },
@@ -62,13 +62,13 @@
       ],
       "files": [
         {
-          "name": "plugin-loader-v1.0.0.jar",
-          "url": "plugin-loader-v1.0.0.jar",
-          "size": 24036,
-          "sha512": "69953a4332bbf99b1a740ea5ec243fedb27898bb60757c5db4f1a1fe5c476ce46f64b58d21485279bb762a021a790d17c3ea6bca8f22c65094b42e5444a49690",
-          "sha256": "4bd72518220b2b907f2cede6ab457a0e07261d0850571feb24d0e4fac6d3c9b0",
-          "sha1": "2632fb3a4af38f389e4430d1c3b1f85eef9a1da9",
-          "md5": "8c62f9e178f49ac8ffe20a1a0b402497"
+          "name": "plugin-loader-v1.0.1.jar",
+          "url": "plugin-loader-v1.0.1.jar",
+          "size": 25308,
+          "sha512": "3a7fb1412364f96d2e1569eb4b016fa420c2ca89f73096a5e44b09a7e1e1bb70ef61de279be4d017313d0698bb6cf844e922c36a862ac3a6ee0ade3ca9e81545",
+          "sha256": "d553339aeea6ebc7431fc0f92cfb17ea09fa339c1c50d93a2cf711594b8438b0",
+          "sha1": "4dddb91b99f55aed9df0370de1f99646d48f08f9",
+          "md5": "61d502345993847b6d6e06bae065b657"
         }
       ]
     }

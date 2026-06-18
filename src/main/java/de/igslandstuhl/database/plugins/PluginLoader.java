@@ -19,8 +19,10 @@ import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
 import de.igslandstuhl.database.Registry;
+import de.igslandstuhl.database.plugins.config.PluginConfig;
+import de.igslandstuhl.database.plugins.meta.PluginLoaderConfig;
 
-public class PluginLoader {
+public class PluginLoader extends BuiltinPlugin {
     public static final Logger LOGGER = LoggerFactory.getLogger(PluginLoader.class);
     private final List<PreLoadedPlugin> pluginInfos = new ArrayList<>();
     public List<PreLoadedPlugin> getPluginInfos() {
@@ -30,7 +32,10 @@ public class PluginLoader {
     public static PluginLoader getInstance() {
         return INSTANCE;
     }
-    private PluginLoader() {}
+    private final PluginLoaderConfig config = new PluginLoaderConfig();
+    private PluginLoader() {
+        super(new PluginDescription("plugin-loader", "Plugin Loader", "Loads plugins from the plugins folder. All Changes to this Plugin's config are only applied after a restart.", PluginLoader.class.getCanonicalName(), List.of()));
+    }
 
     private Map<String, Object> loadYaml(URLClassLoader classLoader) {
         try (InputStream is = classLoader.getResourceAsStream("plugin.yml")) {
@@ -192,6 +197,7 @@ public class PluginLoader {
             }
         });
         pluginInfos.clear();
+        getConfig().save();
     }
 
     
@@ -203,12 +209,25 @@ public class PluginLoader {
         Registry.pluginRegistry().register(plugin.getId(), plugin);
     }
     public void preloadPlugins() {
-        LOGGER.info("Preloading plugins from directory \"plugins\"...");
+        LOGGER.info("Loading plugin loader config...");
+        getConfig().load();
+        String pluginDir = config.pluginDir.getValue();
+        LOGGER.info("Preloading plugins from directory \"{}\"...", pluginDir);
         preloadBuiltinPlugins();
-        preloadAllPlugins(new File("plugins"));
+        preloadAllPlugins(new File(pluginDir));
     }
     public void registerPlugins() {
-        LOGGER.info("Registering plugins from directory \"plugins\"...");
+        LOGGER.info("Registering plugins from directory \"{}\"...", config.pluginDir.getValue());
         loadAllPreloadedPlugins();
     }
+    @Override
+    public PluginConfig<? extends Plugin> getConfig() {
+        return config;
+    }
+    @Override
+    protected void onEnable() {}
+    @Override
+    protected void onDisable() {}
+    @Override
+    protected void onLoad() {}
 }
