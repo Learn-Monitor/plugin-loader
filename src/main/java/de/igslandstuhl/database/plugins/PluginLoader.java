@@ -115,7 +115,7 @@ public class PluginLoader extends BuiltinPlugin {
         Plugin plugin;
         try {
             plugin = (Plugin) preload.clazz().getDeclaredConstructor().newInstance();
-            plugin.init(preload.description());
+            if (!(plugin instanceof BuiltinPlugin)) plugin.init(preload.description());
             registerPlugin(plugin);
             plugin.load();
             if (plugin.getConfig() == null) {
