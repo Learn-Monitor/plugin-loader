@@ -5,7 +5,7 @@ plugins {
 
 group = "de.igs-landstuhl"
 
-version = "v1.0.2"
+version = "v1.0.3"
 
 repositories {
     mavenCentral()

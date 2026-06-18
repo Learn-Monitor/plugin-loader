@@ -31,6 +31,7 @@ public abstract class Plugin {
     }
     void init(PluginDescription description) {
         init(description.id(), description.name(), description.description());
+        this.descriptionAnnotation = description;
     }
 
     public String getId() {
