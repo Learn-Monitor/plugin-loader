@@ -32,7 +32,7 @@ public class PluginLoader extends BuiltinPlugin {
     public static PluginLoader getInstance() {
         return INSTANCE;
     }
-    private final PluginLoaderConfig config = new PluginLoaderConfig();
+    private static final PluginLoaderConfig config = new PluginLoaderConfig();
     private PluginLoader() {
         super(new PluginDescription("plugin-loader", "Plugin Loader", "Loads plugins from the plugins folder. All Changes to this Plugin's config are only applied after a restart.", PluginLoader.class.getCanonicalName(), List.of()));
     }
