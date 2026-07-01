@@ -1,9 +1,10 @@
 plugins {
     java
     id("maven-publish")
+    id("com.vanniktech.maven.publish") version "0.37.0"
 }
 
-group = "de.igs-landstuhl"
+group = "io.github.learn-monitor"
 
 version = "v1.0.5"
 
@@ -64,6 +65,32 @@ publishing {
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+}
+
+mavenPublishing {
+    publishToMavenCentral()
+
+    signAllPublications()
+
+    coordinates(group.toString(), "plugin-loader", version.toString())
+
+    pom {
+        name = "Plugin Loader"
+        description = "Plugin Loader for the Student Database project"
+        licenses {
+            license {
+                name = "GNU General Public License v3.0"
+                url = "http://www.gnu.org/licenses/gpl-3.0.txt"
+            }
+        }
+        developers {
+            developer {
+                id = "schlaumeier5"
+                name = "Lukas Morgenstern"
+                url = "https://github.com/schlaumeier5"
             }
         }
     }
