@@ -80,6 +80,8 @@ mavenPublishing {
     pom {
         name = "Plugin Loader"
         description = "Plugin Loader for the Student Database project"
+        url = "https://github.com/Learn-Monitor/plugin-loader"
+
         licenses {
             license {
                 name = "GNU General Public License v3.0"
@@ -93,5 +95,13 @@ mavenPublishing {
                 url = "https://github.com/schlaumeier5"
             }
         }
+        scm {
+            url = "https://github.com/Learn-Monitor/plugin-loader"
+            connection = "scm:git:https://github.com/Learn-Monitor/plugin-loader.git"
+            developerConnection = "scm:git:ssh://git@github.com/Learn-Monitor/plugin-loader.git"
+        }
     }
+}
+tasks.withType<AbstractPublishToMaven>().configureEach {
+    dependsOn(tasks.withType<Sign>())
 }
