@@ -137,7 +137,7 @@ public abstract class PluginConfig<T extends Plugin> {
             }
         }
         builder
-        .append("},")
+        .append("]},")
         .append("\"values\": ")
         .append((new Gson()).toJson(valuesJSON()))
         .append("}");
